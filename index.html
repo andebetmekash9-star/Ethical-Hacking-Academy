@@ -3,88 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>የአንደበት መካሽ የህይወት ታሪክ</title>
+    <title>Ethical Hacking Academy | አማርኛ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        header {
-            text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-        h1 { color: #2c3e50; }
-        h2 { color: #3498db; border-left: 5px solid #3498db; padding-left: 10px; }
-        .info-box {
-            background: #eef7fd;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #777;
+        :root { --primary-green: #00ff00; --dark-bg: #0d0d0d; --card-bg: #1a1a1a; --text-white: #ffffff; }
+        body { font-family: 'Noto Sans Ethiopic', sans-serif; background-color: var(--dark-bg); color: var(--text-white); margin: 0; scroll-behavior: smooth; }
+        nav { background: rgba(26, 26, 26, 0.95); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--primary-green); }
+        nav .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-green); }
+        nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: white; text-decoration: none; transition: 0.3s; }
+        nav ul li a:hover { color: var(--primary-green); }
+        
+        /* የ Header ማስተካከያ */
+        header { text-align: center; padding: 120px 20px; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; }
+        .user-name { font-size: 1.8rem; color: var(--primary-green); font-weight: bold; margin-bottom: 15px; letter-spacing: 1px; }
+        header h1 { color: var(--primary-green); font-size: 2.8rem; margin: 0; line-height: 1.3; }
+        header p { font-size: 1.2rem; margin-top: 15px; color: #ccc; }
+
+        main { padding: 40px 5%; }
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        article.card { background: var(--card-bg); border-radius: 10px; overflow: hidden; border: 1px solid #333; transition: 0.3s; }
+        article.card:hover { transform: translateY(-10px); border-color: var(--primary-green); }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card-content { padding: 20px; }
+        
+        /* አዲስ የተማሪዎች መመዝገቢያ ፎርም ዲዛይን */
+        #registration { background: var(--card-bg); padding: 40px; border-radius: 10px; margin-top: 50px; max-width: 550px; margin: 50px auto; border: 1px solid #333; }
+        #registration:hover { border-color: var(--primary-green); }
+        form input, form select { width: 100%; padding: 12px; margin: 12px 0; background: #2a2a2a; border: 1px solid #444; color: white; border-radius: 5px; box-sizing: border-box; font-family: inherit; }
+        form input:focus, form select:focus { border-color: var(--primary-green); outline: none; }
+        button.submit-btn { background: var(--primary-green); color: black; border: none; padding: 14px 30px; font-weight: bold; font-size: 1rem; cursor: pointer; border-radius: 5px; width: 100%; transition: 0.3s; margin-top: 10px; }
+        button.submit-btn:hover { background: #00cc00; }
+        
+        footer { text-align: center; padding: 40px; border-top: 1px solid #333; margin-top: 50px; color: #888; }
+
+        /* ለሞባይል ስልክ የተደረገ ልዩ ማስተካከያ (Responsive) */
+        @media (max-width: 600px) {
+            header { padding: 80px 15px; }
+            .user-name { font-size: 1.4rem; margin-bottom: 10px; }
+            header h1 { font-size: 1.9rem; line-height: 1.4; }
+            header p { font-size: 1rem; }
+            .card img { height: 155px; }
+            nav { padding: 15px 3%; }
+            nav ul li { margin-left: 12px; }
+            #registration { padding: 25px 20px; }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="logo">EH Academy</div>
+        <ul>
+            <li><a href="index.html">መነሻ</a></li>
+            <li><a href="#courses">ትምህርቶች</a></li>
+            <li><a href="#registration">ምዝገባ</a></li>
+        </ul>
+    </nav>
+    <header id="home">
+        <div class="user-name">Andebet Mekash</div>
+        <h1>የነገውን የሳይበር ጠባቂ ዛሬ ይሁኑ</h1>
+        <p>ጥራት ያለው የኤቲካል ሃኪንግ ትምህርት በኢትዮጵያ።</p>
+    </header>
+    <main>
+        <section id="courses">
+            <h2 style="text-align: center; margin-bottom: 40px; color: var(--primary-green);">የምንሰጣቸው ትምህርቶች</h2>
+            <div class="course-grid">
+                
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400" alt="Linux Basics">
+                    <div class="card-content">
+                        <h3>Linux Basics</h3>
+                        <p>ተርሚናልን መጠቀም እና የፋይል ሲስተምን መቆጣጠር።</p>
+                        <a href="linux.html" style="color: var(--primary-green); text-decoration: none; font-weight: bold;">ትምህርቱን ጀምር &rarr;</a>
+                    </div>
+                </article>
 
-    <div class="container">
-        <header>
-            <h1>የአንደበት መካሽ የህይወት ታሪክ</h1>
-            <p>እንኳን ወደ ግል ገጼ በሰላም መጡ!</p>
-        </header>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?w=400" alt="Networking">
+                    <div class="card-content">
+                        <h3>Networking</h3>
+                        <p>ስለ IP, TCP/UDP እና የጥቃት አይነቶችን ይረዱ።</p>
+                        <a href="networking.html" style="color: var(--primary-green); text-decoration: none; font-weight: bold;">ትምህርቱን ጀምር &rarr;</a>
+                    </div>
+                </article>
 
-        <section id="about">
-            <h2>ስለ እኔ</h2>
-            <div class="info-box">
-                <p>ስሜ <strong>አንደበት መካሽ</strong> ይባላል። የተወለድኩት በ <strong>1997 ዓ.ም</strong> ነው። አሁን ባለው ሁኔታ የ12ኛ ክፍል ተማሪ ስሆን፣ በትምህርቴ ጠንክሬ በመሥራት ላይ እገኛለሁ።</p>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400" alt="Python for Hacking">
+                    <div class="card-content">
+                        <h3>Python for Hacking</h3>
+                        <p>በፓይዘን በመጠቀም የራስህን የሃኪንግ መሳሪያዎች መስራት።</p>
+                        <a href="#" style="color: var(--primary-green); text-decoration: none; font-weight: bold;">ትምህርቱን ጀምር &rarr;</a>
+                    </div>
+                </article>
+
             </div>
         </section>
 
-        <section id="education">
-            <h2>የትምህርት ጉዞ</h2>
-            <ul>
-                <li><strong>የመጀመሪያ ደረጃ ትምህርት፡</strong> [እዚህ ጋር የተማርክበትን ትምህርት ቤት ስም መጻፍ ትችላለህ]</li>
-                <li><strong>የሁለተኛ ደረጃ ትምህርት፡</strong> [እዚህ ጋር አሁን ያለህበትን ትምህርት ቤት መጥቀስ ትችላለህ]</li>
-                <li><strong>አሁን ያለሁበት ደረጃ፡</strong> የ12ኛ ክፍል ተማሪ</li>
-            </ul>
+        <section id="registration">
+            <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 10px;">የሳይበር ደህንነት ስልጠና ምዝገባ</h2>
+            <p style="text-align: center; color: #ccc; font-size: 0.95rem; margin-bottom: 25px;">የነገውን የሳይበር ጠባቂ ለመሆን አሁኑኑ ይመዝገቡ። መረጃዎን ሲያጠናቅቁ በቅርብ ቀን እናገኝዎታለን።</p>
+            
+            <form action="https://formsubmit.co/andebetmekash9@gmail.com" method="POST">
+                
+                <input type="hidden" name="_next" value="https://andebetmekash12.netlify.app">
+                <input type="hidden" name="_subject" value="አዲስ የተማሪ ምዝገባ ከድረ-ገጽ!">
+                <input type="hidden" name="_captcha" value="true">
+                
+                <input type="text" name="ሙሉ ስም (Full Name)" placeholder="ሙሉ ስም (Full Name)" required>
+                <input type="tel" name="ስልክ ቁጥር (Phone Number)" placeholder="ስልክ ቁጥር (Phone Number) - ለምሳሌ፦ 09..." required>
+                
+                <select name="የመረጡት ኮርስ (Course)" required>
+                    <option value="" disabled selected>የሚፈልጉትን የኮርስ አይነት ይምረጡ</option>
+                    <option value="Linux Basics">Linux Basics (የሊኑክስ መሠረታውያን)</option>
+                    <option value="Networking">Networking (የኔትወርክ ደህንነት)</option>
+                    <option value="Python for Hacking">Python for Hacking (የሃኪንግ መሳሪያዎች አሰራር)</option>
+                </select>
+                
+                <button type="submit" class="submit-btn">አሁኑኑ ይመዝገቡ</button>
+            </form>
         </section>
-
-        <section id="goals">
-            <h2>የወደፊት ዓላማ</h2>
-            <p>የ12ኛ ክፍል ብሄራዊ ፈተናን በከፍተኛ ውጤት አጠናቅቄ፣ ወደ ዩኒቨርሲቲ በመግባት [የምትፈልገውን የሙያ ዘርፍ እዚህ ጋር ጻፍ] የመማር ትልቅ ህልም አለኝ።</p>
-        </section>
-
-        <section id="hobbies">
-            <h2>የምወዳቸው ነገሮች</h2>
-            <ul>
-                <li>መጽሐፍት ማንበብ</li>
-                <li>ቴክኖሎጂና ኮዲንግ መለማመድ</li>
-                <li>ስፖርት መሥራት</li>
-            </ul>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 - የተዘጋጀው በአንደበት መካሽ</p>
-        </footer>
-    </div>
-
+    </main>
+    <footer>
+        <p>&copy; 2026 Ethical Hacking Academy. All rights reserved.</p>
+        <p><a href="sitemap.xml" style="color: #555;">Sitemap</a> | <a href="robots.txt" style="color: #555;">Robots</a></p>
+    </footer>
 </body>
 </html>
