@@ -3,130 +3,1490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethical Hacking Academy | አማርኛ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- ==================== SEO Meta Tags ==================== -->
+    <title>Andebet Mekash | የሳይበር ደህንነት ባለሙያ | Ethical Hacker</title>
+    <meta name="description" content="Andebet Mekash - የሳይበር ደህንነት ባለሙያ እና ኤቲካል ሃከር ከኢትዮጵያ። Linux፣ Networking፣ Python for Hacking እና Cybersecurity ስልጠናዎችን በአማርኛ ያግኙ።">
+    <meta name="keywords" content="Andebet Mekash, አንደበት መካሽ, ethical hacking, ኤቲካል ሃኪንግ, ሳይበር ደህንነት, cybersecurity ethiopia, ኢትዮጵያ, linux, networking, python hacking, penetration testing, bug bounty">
+    <meta name="author" content="Andebet Mekash">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Amharic">
+    <meta name="geo.region" content="ET">
+    <meta name="geo.placename" content="Addis Ababa">
+    
+    <!-- ==================== Open Graph / Social Media ==================== -->
+    <meta property="og:title" content="Andebet Mekash | የሳይበር ደህንነት ባለሙያ">
+    <meta property="og:description" content="የኢትዮጵያ ኤቲካል ሃኪንግ አካዳሚ - የሳይበር ደህንነት ስልጠና በአማርኛ">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andebetmekash.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200">
+    <meta property="og:locale" content="am_ET">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Andebet Mekash | Cybersecurity Expert">
+    <meta name="twitter:description" content="Ethical Hacking Academy in Amharic">
+    
+    <!-- ==================== Canonical URL ==================== -->
+    <link rel="canonical" href="https://andebetmekash.com">
+    
+    <!-- ==================== Structured Data (JSON-LD) for SEO ==================== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Andebet Mekash",
+        "jobTitle": "Cybersecurity Specialist & Ethical Hacker",
+        "description": "የሳይበር ደህንነት ባለሙያ እና ኤቲካል ሃከር",
+        "url": "https://andebetmekash.com",
+        "sameAs": [
+            "https://t.me/andebet_cyber",
+            "https://www.youtube.com/@AndebetMekash-n6f6v",
+            "https://sites.google.com/view/andebet-cyber/home"
+        ],
+        "knowsAbout": ["Cybersecurity", "Ethical Hacking", "Linux", "Networking", "Python", "Penetration Testing"],
+        "nationality": "Ethiopian",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Ethiopia"
+        }
+    }
+    </script>
+    
+    <!-- ==================== Favicon ==================== -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/fluency/48/hacking.png">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/48/hacking.png">
+    
+    <!-- ==================== Fonts ==================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- ==================== Font Awesome ==================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-        :root { --primary-green: #00ff00; --dark-bg: #0d0d0d; --card-bg: #1a1a1a; --text-white: #ffffff; }
-        body { font-family: 'Noto Sans Ethiopic', sans-serif; background-color: var(--dark-bg); color: var(--text-white); margin: 0; scroll-behavior: smooth; }
-        nav { background: rgba(26, 26, 26, 0.95); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--primary-green); }
-        nav .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-green); }
-        nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: white; text-decoration: none; transition: 0.3s; }
-        nav ul li a:hover { color: var(--primary-green); }
+        /* ==================== CSS Variables ==================== */
+        :root {
+            --primary: #00ff00;
+            --primary-dark: #00cc00;
+            --bg: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text: #ffffff;
+            --text-secondary: #cccccc;
+            --text-muted: #888888;
+            --border: #2a2a2a;
+            --accent-gold: #ffd700;
+            --accent-blue: #00b4d8;
+            --accent-purple: #7b2ff7;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --glow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
         
-        /* የ Header ማስተካከያ */
-        header { text-align: center; padding: 120px 20px; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; }
-        .user-name { font-size: 1.8rem; color: var(--primary-green); font-weight: bold; margin-bottom: 15px; letter-spacing: 1px; }
-        header h1 { color: var(--primary-green); font-size: 2.8rem; margin: 0; line-height: 1.3; }
-        header p { font-size: 1.2rem; margin-top: 15px; color: #ccc; }
-
-        main { padding: 40px 5%; }
-        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        article.card { background: var(--card-bg); border-radius: 10px; overflow: hidden; border: 1px solid #333; transition: 0.3s; }
-        article.card:hover { transform: translateY(-10px); border-color: var(--primary-green); }
-        .card img { width: 100%; height: 180px; object-fit: cover; }
-        .card-content { padding: 20px; }
+        /* ==================== Reset & Base ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
-        /* አዲስ የተማሪዎች መመዝገቢያ ፎርም ዲዛይን */
-        #registration { background: var(--card-bg); padding: 40px; border-radius: 10px; margin-top: 50px; max-width: 550px; margin: 50px auto; border: 1px solid #333; }
-        #registration:hover { border-color: var(--primary-green); }
-        form input, form select { width: 100%; padding: 12px; margin: 12px 0; background: #2a2a2a; border: 1px solid #444; color: white; border-radius: 5px; box-sizing: border-box; font-family: inherit; }
-        form input:focus, form select:focus { border-color: var(--primary-green); outline: none; }
-        button.submit-btn { background: var(--primary-green); color: black; border: none; padding: 14px 30px; font-weight: bold; font-size: 1rem; cursor: pointer; border-radius: 5px; width: 100%; transition: 0.3s; margin-top: 10px; }
-        button.submit-btn:hover { background: #00cc00; }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
         
-        footer { text-align: center; padding: 40px; border-top: 1px solid #333; margin-top: 50px; color: #888; }
-
-        /* ለሞባይል ስልክ የተደረገ ልዩ ማስተካከያ (Responsive) */
-        @media (max-width: 600px) {
-            header { padding: 80px 15px; }
-            .user-name { font-size: 1.4rem; margin-bottom: 10px; }
-            header h1 { font-size: 1.9rem; line-height: 1.4; }
-            header p { font-size: 1rem; }
-            .card img { height: 155px; }
-            nav { padding: 15px 3%; }
-            nav ul li { margin-left: 12px; }
-            #registration { padding: 25px 20px; }
+        body {
+            font-family: 'Noto Sans Ethiopic', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* ==================== Preloader (Fast Loading) ==================== */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            z-index: 10000;
+            animation: loading 1.5s ease-in-out infinite;
+        }
+        @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* ==================== Navigation ==================== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            transition: 0.3s;
+        }
+        
+        nav.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 255, 0, 0.1);
+            border-bottom: 1px solid var(--primary);
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+        
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        .nav-logo .highlight {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+            background: rgba(0, 255, 0, 0.08);
+        }
+        
+        .nav-cta {
+            background: var(--primary) !important;
+            color: #000 !important;
+            font-weight: 700 !important;
+        }
+        
+        .nav-cta:hover {
+            background: var(--primary-dark) !important;
+            color: #000 !important;
+            box-shadow: var(--glow);
+        }
+        
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        /* ==================== Hero Section ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 255, 0, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 180, 216, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(123, 47, 247, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .hero-grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+        
+        .hero-greeting {
+            display: inline-block;
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        
+        .hero-content h1 .highlight {
+            color: var(--primary);
+            text-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+        }
+        
+        .hero-typing {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            min-height: 40px;
+        }
+        
+        .hero-typing .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background: var(--primary);
+            margin-left: 3px;
+            animation: blink 0.7s infinite;
+            vertical-align: text-bottom;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            max-width: 550px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 255, 0, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #000;
+            transform: translateY(-3px);
+        }
+        
+        .hero-image {
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+        
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 50px rgba(0, 255, 0, 0.2);
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stat {
+            text-align: center;
+        }
+        
+        .hero-stat .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .hero-stat .label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        /* ==================== Section Styling ==================== */
+        section {
+            padding: 100px 5%;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            background: rgba(0, 255, 0, 0.08);
+            border: 1px solid rgba(0, 255, 0, 0.2);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .section-header h2 .highlight {
+            color: var(--primary);
+        }
+        
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .divider {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        
+        /* ==================== About Section ==================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+        
+        .about-image .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--bg-card);
+            border: 1px solid var(--primary);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .experience-badge .years {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .experience-badge .text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+        
+        .skill-tag {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: 0.3s;
+        }
+        
+        .skill-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(0, 255, 0, 0.05);
+        }
+        
+        /* ==================== Projects Section ==================== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 255, 0, 0.1);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .project-body {
+            padding: 25px;
+        }
+        
+        .project-category {
+            display: inline-block;
+            background: rgba(0, 255, 0, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .project-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        
+        .project-body p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .project-tech span {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: 0.3s;
+            background: rgba(0, 255, 0, 0.05);
+            color: var(--primary);
+            border: 1px solid rgba(0, 255, 0, 0.2);
+        }
+        
+        .project-link:hover {
+            background: var(--primary);
+            color: #000;
+        }
+        
+        /* ==================== Contact Section ==================== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: rgba(0, 255, 0, 0.08);
+            border: 1px solid rgba(0, 255, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+        
+        .contact-text span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: inherit;
+        }
+        
+        .form-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--glow);
+        }
+        
+        .form-submit:disabled {
+            background: #555;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* ==================== Footer ==================== */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 40px 5% 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        /* ==================== Back to Top ==================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #000;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 999;
+            display: none;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 255, 0, 0.5);
+        }
+        
+        /* ==================== Animations ==================== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* ==================== Responsive Design ==================== */
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+                gap: 50px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                margin: 0 auto 35px;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                margin-left: 0;
+            }
+            
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image .experience-badge {
+                right: 0;
+                bottom: -10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--bg);
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 12px 16px;
+                font-size: 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-typing {
+                font-size: 1.1rem;
+            }
+            
+            .hero-image img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 60px 5%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .hero-stat .number {
+                font-size: 1.8rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-image img {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">EH Academy</div>
-        <ul>
-            <li><a href="index.html">መነሻ</a></li>
-            <li><a href="#courses">ትምህርቶች</a></li>
-            <li><a href="#registration">ምዝገባ</a></li>
+    <!-- ==================== Preloader ==================== -->
+    <div class="preloader"></div>
+    
+    <!-- ==================== Navigation ==================== -->
+    <nav id="navbar">
+        <a href="#" class="nav-logo">
+            <img src="https://img.icons8.com/fluency/48/hacking.png" alt="Logo" width="40" height="40">
+            <span>Andebet<span class="highlight">.dev</span></span>
+        </a>
+        
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">መነሻ</a></li>
+            <li><a href="#about">ስለ እኔ</a></li>
+            <li><a href="#projects">ፕሮጀክቶች</a></li>
+            <li><a href="#contact">አግኙኝ</a></li>
+            <li><a href="https://sites.google.com/view/andebet-cyber/home" target="_blank">ኮርሶች</a></li>
+            <li><a href="#contact" class="nav-cta">አሁን ይመዝገቡ</a></li>
         </ul>
     </nav>
-    <header id="home">
-        <div class="user-name">Andebet Mekash</div>
-        <h1>የነገውን የሳይበር ጠባቂ ዛሬ ይሁኑ</h1>
-        <p>ጥራት ያለው የኤቲካል ሃኪንግ ትምህርት በኢትዮጵያ።</p>
-    </header>
-    <main>
-        <section id="courses">
-            <h2 style="text-align: center; margin-bottom: 40px; color: var(--primary-green);">የምንሰጣቸው ትምህርቶች</h2>
-            <div class="course-grid">
-                
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400" alt="Linux Basics">
-                    <div class="card-content">
-                        <h3>Linux Basics</h3>
-                        <p>ተርሚናልን መጠቀም እና የፋይል ሲስተምን መቆጣጠር።</p>
-                        <a href="linux.html" style="color: var(--primary-green); text-decoration: none; font-weight: bold;">ትምህርቱን ጀምር &rarr;</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?w=400" alt="Networking">
-                    <div class="card-content">
-                        <h3>Networking</h3>
-                        <p>ስለ IP, TCP/UDP እና የጥቃት አይነቶችን ይረዱ።</p>
-                        <a href="networking.html" style="color: var(--primary-green); text-decoration: none; font-weight: bold;">ትምህርቱን ጀምር &rarr;</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400" alt="Python for Hacking">
-                    <div class="card-content">
-                        <h3>Python for Hacking</h3>
-                        <p>በፓይዘን በመጠቀም የራስህን የሃኪንግ መሳሪያዎች መስራት።</p>
-                        <a href="#" style="color: var(--primary-green); text-decoration: none; font-weight: bold;">ትምህርቱን ጀምር &rarr;</a>
-                    </div>
-                </article>
-
+    
+    <!-- ==================== Hero Section ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-grid-overlay"></div>
+        
+        <div class="hero-content animate">
+            <span class="hero-greeting">👋 ሰላም! እንዴት ናችሁ?</span>
+            <h1>
+                እኔ <span class="highlight">አንደበት መካሽ</span><br>
+                እባላለሁ
+            </h1>
+            <div class="hero-typing">
+                <span id="typingText"></span><span class="cursor"></span>
             </div>
-        </section>
-
-        <section id="registration">
-            <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 10px;">የሳይበር ደህንነት ስልጠና ምዝገባ</h2>
-            <p style="text-align: center; color: #ccc; font-size: 0.95rem; margin-bottom: 25px;">የነገውን የሳይበር ጠባቂ ለመሆን አሁኑኑ ይመዝገቡ። መረጃዎን ሲያጠናቅቁ በቅርብ ቀን እናገኝዎታለን።</p>
+            <p class="hero-description animate delay-1">
+                የሳይበር ደህንነት ባለሙያ እና ኤቲካል ሃከር ከኢትዮጵያ። 
+                ድርጅቶችን ከሳይበር ጥቃት በመከላከል እና ቀጣዩን ትውልድ 
+                የሳይበር ጠባቂዎችን በማሰልጠን ላይ እገኛለሁ።
+            </p>
             
-            <form action="https://formsubmit.co/andebetmekash9@gmail.com" method="POST">
+            <div class="hero-buttons animate delay-2">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> አግኙኝ
+                </a>
+                <a href="#projects" class="btn btn-outline">
+                    <i class="fas fa-folder-open"></i> ስራዎቼን ይመልከቱ
+                </a>
+            </div>
+            
+            <div class="hero-stats animate delay-3">
+                <div class="hero-stat">
+                    <span class="number" data-count="500">0</span>+
+                    <span class="label">የሰለጠኑ ተማሪዎች</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number" data-count="15">0</span>+
+                    <span class="label">የተለያዩ ኮርሶች</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number" data-count="50">0</span>+
+                    <span class="label">የተጠናቀቁ ፕሮጀክቶች</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-image animate delay-1">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=400&fit=crop" 
+                 alt="Andebet Mekash - Cybersecurity Specialist" 
+                 width="350" height="350" 
+                 loading="eager">
+        </div>
+    </section>
+    
+    <!-- ==================== About Section ==================== -->
+    <section id="about">
+        <div class="section-header">
+            <span class="section-label">ስለ እኔ</span>
+            <h2>ማን <span class="highlight">እንደሆንኩ</span> ይወቁ</h2>
+            <div class="divider"></div>
+            <p>የሳይበር ደህንነትን ለሁሉም ተደራሽ ለማድረግ የምተጋ ኤቲካል ሃከር</p>
+        </div>
+        
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600" 
+                     alt="Andebet working on cybersecurity" 
+                     loading="lazy" width="600" height="400">
+                <div class="experience-badge">
+                    <div class="years">3+</div>
+                    <div class="text">ዓመታት ልምድ</div>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <h3>ከኢትዮጵያ የመጣ <span class="highlight">የሳይበር ደህንነት ባለሙያ</span></h3>
+                <p>
+                    ስሜ አንደበት መካሽ እባላለሁ። በሳይበር ደህንነት እና ኤቲካል ሃኪንግ ዙሪያ 
+                    የተለያዩ ስልጠናዎችን በአማርኛ ቋንቋ እሰጣለሁ።
+                </p>
+                <p>
+                    ዓላማዬ ኢትዮጵያውያንን በሳይበር ደህንነት ማስታጠቅና በዚህ ዘርፍ 
+                    ተወዳዳሪ እንዲሆኑ ማድረግ ነው። ከመሰረታዊ ሊኑክስ እስከ የላቀ 
+                    የሃኪንግ ቴክኒኮችን በተግባር በተደገፈ መልኩ አስተምራለሁ።
+                </p>
                 
-                <input type="hidden" name="_next" value="https://andebetmekash12.netlify.app">
-                <input type="hidden" name="_subject" value="አዲስ የተማሪ ምዝገባ ከድረ-ገጽ!">
-                <input type="hidden" name="_captcha" value="true">
+                <div class="skills-container">
+                    <span class="skill-tag">🐧 Linux</span>
+                    <span class="skill-tag">🌐 Networking</span>
+                    <span class="skill-tag">🐍 Python</span>
+                    <span class="skill-tag">🛡️ Cybersecurity</span>
+                    <span class="skill-tag">🔍 Penetration Testing</span>
+                    <span class="skill-tag">🐞 Bug Bounty</span>
+                    <span class="skill-tag">☁️ Cloud Security</span>
+                    <span class="skill-tag">📱 Mobile Security</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== Projects Section ==================== -->
+    <section id="projects">
+        <div class="section-header">
+            <span class="section-label">ፕሮጀክቶች</span>
+            <h2>የሰራኋቸው <span class="highlight">ስራዎች</span></h2>
+            <div class="divider"></div>
+            <p>በሳይበር ደህንነት ዙሪያ የሰራኋቸው የተለያዩ ፕሮጀክቶች</p>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card">
+                <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?w=600" 
+                     alt="Ethical Hacking Academy" 
+                     class="project-image" loading="lazy" width="600" height="220">
+                <div class="project-body">
+                    <span class="project-category">ትምህርት</span>
+                    <h3>Ethical Hacking Academy</h3>
+                    <p>በአማርኛ የተዘጋጀ ሙሉ የኤቲካል ሃኪንግ ስልጠና መድረክ። ከ500 በላይ ተማሪዎችን አስተምሯል።</p>
+                    <div class="project-tech">
+                        <span>Linux</span>
+                        <span>Python</span>
+                        <span>Networking</span>
+                        <span>Kali Linux</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://sites.google.com/view/andebet-cyber/home" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> ይጎብኙ
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fas fa-info-circle"></i> ዝርዝር
+                        </a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Project 2 -->
+            <article class="project-card">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?w=600" 
+                     alt="Network Security Toolkit" 
+                     class="project-image" loading="lazy" width="600" height="220">
+                <div class="project-body">
+                    <span class="project-category">መሳሪያ</span>
+                    <h3>Network Security Toolkit</h3>
+                    <p>የኔትወርክ ደህንነት ምርመራ መሳሪያ በፓይዘን። ድክመቶችን በራስ-ሰር የሚያገኝ እና ሪፖርት የሚያደርግ።</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Nmap</span>
+                        <span>Wireshark</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fas fa-info-circle"></i> ዝርዝር
+                        </a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Project 3 -->
+            <article class="project-card">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600" 
+                     alt="Bug Bounty Reports" 
+                     class="project-image" loading="lazy" width="600" height="220">
+                <div class="project-body">
+                    <span class="project-category">ምርምር</span>
+                    <h3>Bug Bounty Research</h3>
+                    <p>በተለያዩ ድርጅቶች ላይ የተገኙ የደህንነት ቀዳዳዎች ሪፖርት እና ማስተካከያ ሀሳቦች።</p>
+                    <div class="project-tech">
+                        <span>Web Security</span>
+                        <span>OWASP Top 10</span>
+                        <span>Burp Suite</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class="fas fa-file-alt"></i> ሪፖርቶች
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <!-- ==================== Contact Section ==================== -->
+    <section id="contact">
+        <div class="section-header">
+            <span class="section-label">አግኙኝ</span>
+            <h2>እንነጋገር<span class="highlight">!</span></h2>
+            <div class="divider"></div>
+            <p>ለማንኛውም ጥያቄ፣ የትብብር ሀሳብ ወይም የስልጠና ጥያቄ ከዚህ በታች ያግኙኝ</p>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>በቀጥታ <span class="highlight">ያግኙኝ</span></h3>
+                <p>ለማንኛውም ጥያቄ ወይም አስተያየት ከታች ባሉት መንገዶች ሊያገኙኝ ይችላሉ። በተቻለ ፍጥነት መልስ እሰጣለሁ።</p>
                 
-                <input type="text" name="ሙሉ ስም (Full Name)" placeholder="ሙሉ ስም (Full Name)" required>
-                <input type="tel" name="ስልክ ቁጥር (Phone Number)" placeholder="ስልክ ቁጥር (Phone Number) - ለምሳሌ፦ 09..." required>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>ኢሜል</h4>
+                            <span>andebetmekash9@gmail.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telegram</h4>
+                            <span>@andebet_cyber</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>አድራሻ</h4>
+                            <span>አዲስ አበባ፣ ኢትዮጵያ</span>
+                        </div>
+                    </div>
+                </div>
                 
-                <select name="የመረጡት ኮርስ (Course)" required>
-                    <option value="" disabled selected>የሚፈልጉትን የኮርስ አይነት ይምረጡ</option>
-                    <option value="Linux Basics">Linux Basics (የሊኑክስ መሠረታውያን)</option>
-                    <option value="Networking">Networking (የኔትወርክ ደህንነት)</option>
-                    <option value="Python for Hacking">Python for Hacking (የሃኪንግ መሳሪያዎች አሰራር)</option>
-                </select>
-                
-                <button type="submit" class="submit-btn">አሁኑኑ ይመዝገቡ</button>
-            </form>
-        </section>
-    </main>
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://t.me/andebet_cyber" target="_blank" class="social-link" title="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@AndebetMekash-n6f6v" target="_blank" class="social-link" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="mailto:andebetmekash9@gmail.com" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://sites.google.com/view/andebet-cyber/home" target="_blank" class="social-link" title="Website">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="#" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>መልዕክት <span class="highlight">ይላኩ</span></h3>
+                <form action="https://formsubmit.co/andebetmekash9@gmail.com" method="POST" id="contactForm">
+                    <input type="hidden" name="_subject" value="አዲስ መልዕክት ከፖርትፎሊዮ ድረ-ገጽ">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">ሙሉ ስም *</label>
+                            <input type="text" id="name" name="ሙሉ ስም" placeholder="ሙሉ ስምዎን ያስገቡ" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">ኢሜል *</label>
+                            <input type="email" id="email" name="ኢሜል" placeholder="ኢሜል አድራሻዎን ያስገቡ" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">ርዕሰ ጉዳይ</label>
+                        <input type="text" id="subject" name="ርዕሰ ጉዳይ" placeholder="የመልዕክቱ ርዕስ">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">መልዕክት *</label>
+                        <textarea id="message" name="መልዕክት" placeholder="መልዕክትዎን እዚህ ይፃፉ..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> መልዕክት ይላኩ
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== Footer ==================== -->
     <footer>
-        <p>&copy; 2026 Ethical Hacking Academy. All rights reserved.</p>
-        <p><a href="sitemap.xml" style="color: #555;">Sitemap</a> | <a href="robots.txt" style="color: #555;">Robots</a></p>
+        <div class="footer-links">
+            <a href="#home">መነሻ</a>
+            <a href="#about">ስለ እኔ</a>
+            <a href="#projects">ፕሮጀክቶች</a>
+            <a href="#contact">አግኙኝ</a>
+            <a href="https://sites.google.com/view/andebet-cyber/home" target="_blank">ኮርሶች</a>
+            <a href="https://t.me/andebet_cyber" target="_blank">Telegram</a>
+        </div>
+        
+        <div class="social-links" style="justify-content: center; margin-bottom: 20px;">
+            <a href="https://t.me/andebet_cyber" target="_blank" class="social-link">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://www.youtube.com/@AndebetMekash-n6f6v" target="_blank" class="social-link">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="mailto:andebetmekash9@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        
+        <p class="footer-bottom">
+            &copy; <span id="year"></span> Andebet Mekash. All rights reserved. | 
+            በኢትዮጵያ የተሰራ 🇪🇹
+        </p>
     </footer>
+    
+    <!-- ==================== Back to Top ==================== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ==================== JavaScript ==================== -->
+    <script>
+        // ==================== Typing Effect ====================
+        const typingTexts = [
+            "የሳይበር ደህንነት ባለሙያ",
+            "ኤቲካል ሃከር",
+            "Linux Enthusiast",
+            "Python Developer",
+            "Bug Bounty Hunter"
+        ];
+        
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingDelay = 100;
+        const typingElement = document.getElementById('typingText');
+        
+        function typeEffect() {
+            const currentText = typingTexts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typingDelay = 50;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typingDelay = 100;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typingDelay = 2000; // Pause at the end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % typingTexts.length;
+                typingDelay = 500;
+            }
+            
+            setTimeout(typeEffect, typingDelay);
+        }
+        
+        typeEffect();
+        
+        // ==================== Counter Animation ====================
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-count]');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-count'));
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+        
+        animateCounters();
+        
+        // ==================== Mobile Menu ====================
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        
+        // Close menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+        
+        // ==================== Navbar Scroll Effect ====================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // ==================== Back to Top ====================
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 500 ? 'flex' : 'none';
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // ==================== Active Nav Link ====================
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // ==================== Contact Form ====================
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> በመላክ ላይ...';
+            btn.disabled = true;
+            
+            // FormSubmit will handle the rest
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> ተልኳል!';
+                btn.style.background = '#00cc00';
+            }, 2000);
+        });
+        
+        // ==================== Set Current Year ====================
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // ==================== Smooth Section Animation ====================
+        const animatedElements = document.querySelectorAll('.project-card, .about-content, .contact-info, .contact-form');
+        
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animatedElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            sectionObserver.observe(el);
+        });
+    </script>
 </body>
 </html>
